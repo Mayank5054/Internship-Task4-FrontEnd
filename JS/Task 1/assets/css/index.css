@@ -1,0 +1,100 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+flex-direction:column ;
+background: #fafafa;
+}
+
+form{
+    min-height:30vh;
+    width:80%;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    flex-direction: column;
+    /* background:red; */
+}
+.form-upper{
+    /* display:flex ; */
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.form-upper > div{
+    width:400px;
+    /* background:red; */
+}
+.input{
+    width:100%;
+}
+.form-lower{
+    width:100%;
+    /* display: flex;
+    align-items:center ;
+    justify-content: center;
+    flex-direction: column; */
+}
+.education-title{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.education-title > button {
+    border-radius:100px;
+}
+.row1{
+    display: flex;
+    width:100%;
+    align-items:flex-start;
+    justify-content:flex-start;
+}
+
+.delte-btn > button {
+    border-radius: 100px;
+}
+.row2-btn{
+    display: none;
+}
+.row2-btn-active{
+    display: block;
+}
+tr td{
+    padding:10px;
+
+    margin-left:15px;
+}
+tr:nth-child(even){
+    background:#717171;
+}
+table{
+    width:80%;
+}
+input{
+    padding:5px;
+    border-radius:5px;
+}
+#delete-btn{
+    display: none;
+}
+
+.delete-btn-active{
+    display: block !important;
+}
+.add-btn:hover{
+    scale:1.05;
+}
+::placeholder{
+    font-sizE:14px;
+}
+.submitButton{
+    padding-left:20px !important;
+    padding-right:20px !important;
+    border-radius: 10px;
+    border: none;
+}
+.submitButton:hover{
+    scale:1.05;
+}

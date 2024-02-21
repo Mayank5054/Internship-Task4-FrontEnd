@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <title>JavaScript Task 01</title>
+</head>
+
+<body>
+
+    <form method="post" id="form" >
+        <div class="education-title mt-5 ">
+            <h1 class="me-auto">Student Form</h1>
+        </div>
+        <div class="form-upper mt-5">
+            <div class="row" style="width:100%">
+                <div class="col-md-6 col-lg-4">
+                    <label for="fname">First Name</label><br>
+                    <input type="text" id="fname" name="fname" class="input" placeholder="Enter First Name"/>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <label for="lname">Last Name</label><br>
+                    <input type="text" id="lname" name="lname" class="input" placeholder="Enter Last Name"/>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <label for="dob">Date Of Birth</label><br>
+                <input type="date" id="dob" name="dob" class="input" placeholder="Enter Birth Date"/>
+                </div>
+                <div class="col-md-6 col-lg-4 mt-lg-3">
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" class="input" placeholder="Enter Email"/>
+                </div>              
+                <div class="col-md-6 col-lg-4 mt-lg-3">
+                    <label for="address">Address</label><br>
+                <input type="text" id="address" name="address" class="input" placeholder="Enter Place"/>
+                </div>
+                <div class="col-md-6 col-lg-4 mt-lg-3">
+                    <label for="gy">Graduation Year</label><br>
+                    <input type="month" id="gy" name="gy" class="input" placeholder="Enter Graduation Year"/>
+                </div>
+            </div>
+            <!-- <div class="">
+                <label for="fname">First Name</label><br>
+                <input type="text" id="fname" name="fname" class="input" />
+            </div> -->
+            <!-- <div class="">
+                <label for="lname">Last Name</label><br>
+                <input type="text" id="lname" name="lname" class="input" />
+            </div> -->
+            <!-- <div class="">
+                <label for="dob">Date Of Birth</label><br>
+                <input type="date" id="dob" name="dob" class="input" />
+            </div> -->
+            <!-- <div class="mt-3">
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" class="input" />
+            </div> -->
+            <!-- <div class="mt-3">
+                <label for="address">Address</label><br>
+                <input type="text" id="address" name="address" class="input" />
+            </div> -->
+            <!-- <div class="mt-3">
+                <label for="fname">Graduation Year</label><br>
+                <input type="month" id="gy" name="gy" class="input" />
+            </div> -->
+        </div>
+        <div class="education-title mt-5 ">
+            <h1>Education</h1>
+            <button type="button" class="add-btn ms-auto" style="border:none;"> 
+                <i class="fa fa-plus ms-auto " onclick="addRow()"></i>
+            </button>
+        </div>
+        <div class="form-lower" id="form-lower">
+            <div class="row mt-3">
+                <div class="col-lg-2 col-sm-6">
+                    <div>
+                        <label for="db">Degree / Board</label><br>
+                        <input type="text" id="db" name="db" class="input degree  mt-3" placeholder="Enter Professional Degree"/>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div>
+                        <label for="fname">School / College</label><br>
+                        <input type="text" id="sc" name="sc" class="input school mt-3" placeholder="Enter College"/>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div>
+                        <label for="sd">Start Date</label><br>
+                        <input type="month" id="sd" name="sd" class="input startDate mt-3" placeholder="Enter Start Date"/>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div>
+                        <label for="py">Passout Year</label><br>
+                        <input type="month" id="py" name="py" class="input passout mt-3" placeholder="Enter Passout Year"/>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div>
+                        <label for="pr">Percentage</label><br>
+                        <input type="text" id="pr" name="pr" class="input percentage mt-3" placeholder="Enter Percentage"/>
+                    </div>
+
+                </div>
+                <div class="col-lg-1 col-sm-5">
+                    <div>
+                        <label for="bl">Backlog</label><br>
+                        <input type="number" id="bl" name="bl" class="input backlog mt-3" placeholder="Backlogs"/>
+                    </div>
+
+                </div>
+            </div>
+            <hr style="width:100%">
+            <div class="row mt-sm- mt-0" id="row2">
+                <div class="col-lg-2 col-sm-6">
+                    <div class="mt-sm-2 mt-lg-0">
+                        <label for="db" class="d-lg-none">Degree / Board</label><br>
+                        <input type="text" id="db" name="db" class="input degree" placeholder="Enter Professional Degree"/>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="mt-sm-2 mt-lg-0">
+                        <label for="fname" class="d-lg-none">School / College</label><br>
+                        <input type="text" id="sc" name="sc" class="input school" placeholder="Enter College"/>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="mt-sm-2 mt-lg-0">
+                        <label for="sd" class="d-lg-none">Start Date</label><br>
+                        <input type="month" id="sd" name="sd" class="input startDate" placeholder="Enter Start Date"/>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="mt-sm-2 mt-lg-0">
+                        <label for="py" class="d-lg-none">Passout Year</label><br>
+                        <input type="month" id="py" name="py" class="input passout" placeholder="Enter Passout Year"/>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="mt-sm-2 mt-lg-0">
+                        <label for="pr" class="d-lg-none">Percentage</label><br>
+                        <input type="text" id="pr" name="pr" class="input percentage" placeholder="Enter Percentage"/>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-sm-5 col-11">
+                    <div class="mt-sm-2 mt-lg-0">
+                        <label for="bl" class="d-lg-none">Backlog</label><br>
+                        <input type="number" id="bl" name="bl" class="input backlog" placeholder="Backlogs"/>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-sm-1 col-1" id="delete-col" style="display: flex;align-items: center;justify-content: center;">
+                        <i class="fa fa-minus mt-3 p-2" id="delete-btn" ></i>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-2 col-md-">
+                    <label for="db">Degree / Board</label><br>
+                    <input type="text" id="db" name="db"  class="input-1 degree" />
+                </div>
+                <div class="col-2">
+                    <label for="fname">School / College</label><br>
+                    <input type="text" id="sc" name="sc" class="input-1 school" />
+                </div>
+                <div class="col-2">
+                    <label for="sd">Start Date</label><br>
+                    <input type="month" id="sd" name="sd" class="input startDate" />
+                </div>
+                <div class="col-2 ">
+                    <label for="py">Passout Year</label><br>
+                    <input type="month" id="py" name="py" class="input passout" />
+                </div>
+                <div class="col-2 ">
+                    <label for="pr">Percentage</label><br>
+                    <input type="text" id="pr" name="pr" class="input percentage" />
+                </div>
+                <div class="col-2 ">
+                    <label for="bl">Backlog</label><br>
+                    <input type="number" id="bl" name="bl" class="input backlog" />
+                </div>
+            </div> -->
+            <!-- <div class="row1" id="row1">
+                <div class="ms-2">
+                    <label for="db">Degree / Board</label><br>
+                    <input type="text" id="db" name="db"  class="input-1 degree" />
+                </div>
+                <div class="ms-2">
+                    <label for="fname">School / College</label><br>
+                    <input type="text" id="sc" name="sc" class="input-1 school" />
+                </div>
+                <div class="ms-2">
+                    <label for="sd">Start Date</label><br>
+                    <input type="month" id="sd" name="sd" class="input startDate" />
+                </div>
+                <div class="ms-2">
+                    <label for="py">Passout Year</label><br>
+                    <input type="month" id="py" name="py" class="input passout" />
+                </div>
+                <div class="ms-2">
+                    <label for="pr">Percentage</label><br>
+                    <input type="text" id="pr" name="pr" class="input percentage" />
+                </div>
+                <div class="ms-2">
+                    <label for="bl">Backlog</label><br>
+                    <input type="number" id="bl" name="bl" class="input backlog" />
+                </div>
+            </div>
+            <hr style="width:100%;">
+            <div class="row1" id="row2">
+                <div class="ms-2">
+                    <input type="text" id="db" name="db" class="input-1 degree" />
+                </div>
+                <div class="ms-2">
+                    <input type="text" id="sc" name="sc" class="input-1 school" />
+                </div>
+                <div class="ms-2">
+                    <input type="month" id="sd" name="sd" class="input startDate" />
+                </div>
+                <div class="ms-2">
+                    <input type="month" id="py" name="py" class="input passout" />
+                </div>
+                <div class="ms-2">
+                    <input type="text" id="pr" name="pr" class="input percentage" />
+                </div>
+                <div class="ms-2">
+                    <input type="number" id="bl" name="bl" class="input backlog" />
+                </div>
+                <div class="ms-2 delete-btn ms-auto row2-btn"  id="delete-btn">
+                    <i class="fa fa-minus" id="delete-btn" onclick="deleteRow()"></i>
+                </div>
+            </div> -->
+        </div>
+    </form>
+    <button type="submit" class="submitButton p-2 mt-5" onclick="getData()" class="mt-5">
+        submit
+    </button>
+    <div id="identity" class="mt-5">
+
+    </div>
+    <div class="table-responsive" style="width:80%">
+        <table id="displayTable" class="table table-striped table-hover mt-5">
+            <tr>
+                <th>Degree</th>
+                <th>School</th>
+                <th>Start Date</th>
+                <th>Passout</th>
+                <th>Percentage</th>
+                <th>Backlog</th>
+            </tr>
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    let counter = 3;
+    var container = document.getElementById("form-lower");
+    const table = document.getElementById("tbody");
+    const form = document.getElementById("form");
+    const identity = document.getElementById("identity");
+
+    function deleteRow(index) {
+        var elem = document.getElementById("row" + index);
+        var hr = document.getElementById(`hr${index}`);
+        console.log(elem);
+        container.removeChild(elem);
+        container.removeChild(hr);
+    }
+
+    function addRow() {
+        const elem = document.getElementById("row2").cloneNode(true);
+      
+        elem.childNodes[1].childNodes[1].childNodes[4].value=""
+        elem.childNodes[3].childNodes[1].childNodes[4].value=""
+        elem.childNodes[9].childNodes[1].childNodes[4].value=""
+        elem.childNodes[11].childNodes[1].childNodes[4].value=""
+     
+        // console.log(elem.childNodes[13].childNodes[1]);
+        const nodem = document.createElement("i");
+        const hr = document.createElement("hr");
+
+        hr.setAttribute("style", "width:100%");
+        hr.setAttribute("id",`hr${counter}`);
+
+        nodem.setAttribute("class", "fa fa-minus ms-auto")
+        elem.childNodes[13].childNodes[1].setAttribute("onclick", `deleteRow(${counter})`);
+        elem.childNodes[13].childNodes[1].classList.add("delete-btn-active");
+
+        elem.setAttribute("id", "row" + counter);
+        // elem.appendChild(nodem);
+
+        counter++;
+        container.appendChild(hr);
+
+        container.appendChild(elem);
+        
+        console.log(elem);
+    }
+
+     function getData() {
+        // console.log(document.forms);
+        const data = {
+            education: []
+        };
+        data.firstName = document.forms[0]["fname"].value;
+        data.lastName = document.forms[0]["lname"].value;
+        data.dob = document.forms[0]["dob"].value;
+        data.email = document.forms[0]["email"].value;
+        data.address = document.forms[0]["address"].value;
+        data.graduation = document.forms[0]["gy"].value;
+
+        const degree = document.getElementsByClassName("degree");
+        const school = document.getElementsByClassName("school");
+        const start = document.getElementsByClassName("startDate");
+        const passout = document.getElementsByClassName("passout");
+        const percentage = document.getElementsByClassName("percentage");
+        const backlog = document.getElementsByClassName("backlog");
+        for (let i = 0; i < degree.length; i++) {
+            const obj = {};
+            if (degree[i].value == "" && school[i].value == "" && start[i].value == "" && passout[i].value == "" && percentage[i].value == "" && backlog[i].value == "") {
+                // console.log("object is empty");
+                continue;
+            }
+            else {
+                obj.degree = degree[i].value;
+                obj.school = school[i].value;
+                obj.startDate = start[i].value;
+                obj.passout = passout[i].value;
+                obj.percentage = percentage[i].value;
+                obj.backlog = backlog[i].value;
+                data.education.push(obj);
+            }
+        }
+        console.log("Form Data", data);
+        displayData(data);
+        form.reset();
+    }
+
+    function displayData(e) {
+        table.innerHTML="";
+        identity.innerHTML="";
+        // console.log(table.childNodes)
+        // console.log("data object", e);
+        for (let key in e) {
+            
+            if(key=="education" || e[key]==""){
+                console.log(e.key);
+                continue;
+            }
+            else{
+                const p = document.createElement("p");
+                p.innerHTML = `${key} = ${e[key]}`;
+                identity.appendChild(p);
+            }
+        }
+        for (let obj of e.education) {
+            const tr = document.createElement("tr");
+            const td1 = document.createElement("td");
+            const td2 = document.createElement("td");
+            const td3 = document.createElement("td");
+            const td4 = document.createElement("td");
+            const td5 = document.createElement("td");
+            const td6 = document.createElement("td");
+            td1.innerHTML = obj.degree;
+            td2.innerHTML = obj.school;
+            td3.innerHTML = obj.startDate;
+            td4.innerHTML = obj.passout;
+            td5.innerHTML = obj.percentage;
+            td6.innerHTML = obj.backlog;
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+            tr.appendChild(td6);
+            table.appendChild(tr);
+        }
+    }
+</script>
