@@ -1,0 +1,35 @@
+
+/* .main_container{
+   height:100vh;
+   background:red;
+} */
+
+*{
+    box-sizing: border-box;
+}
+.df{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    margin-left:5%;
+}
+ul > li{
+    margin-right:10px !important;
+}
+
+.colom{
+    margin-left:5px;
+}
+footer{
+    height:10vh;
+    align-items: center;
+    justify-content: center;
+}
+.base{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

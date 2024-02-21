@@ -1,0 +1,27 @@
+@media screen and (max-width:1569px){
+    .r3c3_container{
+        margin-top:24px;
+        margin-left:35%;
+    }
+    .r3c2{
+        min-width:500px;
+        width:50%;
+    }
+    .r3c3{
+        width:100%;
+       
+    }
+    .r3c2{
+        margin-top:0px;
+    }
+    .r3c2_container{
+        padding:0px;
+        margin-right:0px !important;
+    }
+    .r3c3_unique{
+        margin-top:1.75% !important;
+    }
+    .barchart-annotation{
+        margin-top:50px !important;
+    }
+}

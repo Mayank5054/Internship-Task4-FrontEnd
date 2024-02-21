@@ -1,0 +1,16 @@
+@media screen and (max-width:767px) {
+    .search-btn-from>.form-control {
+        display: none !important;
+    }
+
+    .btn-search {
+        position: static !important;
+        padding: 10px;
+        border-radius: 5px;
+        background: #cccccc55;
+    }
+
+    .dropdown-menu {
+        left: -800% !important;
+    }
+}
