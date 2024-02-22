@@ -166,7 +166,7 @@
                     <i class="fa fa-minus mt-3 p-2" id="delete-btn"></i>
                 </div>
             </div>
-           
+
         </div>
     </form>
     <button type="button" class="submitButton p-2 mt-5" onclick="getData()" class="mt-5">
@@ -201,8 +201,8 @@
     const form = document.getElementById("form");
     const identity = document.getElementById("identity");
     var data = {
-            education: []
-        };
+        education: {}
+    };
     function deleteRow(index) {
         var elem = document.getElementById("row" + index);
         var hr = document.getElementById(`hr${index}`);
@@ -243,7 +243,7 @@
         //     education: []
         // };
         data = {
-            education:[]
+            education: {}
         };
         data.firstName = document.forms[0]["fname"].value;
         data.lastName = document.forms[0]["lname"].value;
@@ -271,7 +271,7 @@
                 obj.passout = passout[i].value;
                 obj.percentage = percentage[i].value;
                 obj.backlog = backlog[i].value;
-                data.education.push(obj);
+                data.education["row" + i] = obj;
             }
         }
         console.log("Form Data", data);
@@ -281,11 +281,9 @@
     function displayData(e) {
         table.innerHTML = "";
         identity.innerHTML = "";
-        // console.log(table.childNodes)
-        // console.log("data object", e);
+       
         let count = 0;
         for (let key in e) {
-
             if (key == "education" || e[key] == "") {
                 console.log(e.key);
                 continue;
@@ -296,7 +294,8 @@
                 identity.appendChild(p);
             }
         }
-        for (let obj of e.education) {
+        for (let key in e.education) {
+            console.log(key);
             const tr = document.createElement("tr");
             const td1 = document.createElement("td");
             const td2 = document.createElement("td");
@@ -306,12 +305,12 @@
             const td6 = document.createElement("td");
             const td7 = document.createElement("td");
 
-            td1.innerHTML = obj.degree;
-            td2.innerHTML = obj.school;
-            td3.innerHTML = obj.startDate;
-            td4.innerHTML = obj.passout;
-            td5.innerHTML = obj.percentage;
-            td6.innerHTML = obj.backlog;
+            td1.innerHTML = e.education[key].degree;
+            td2.innerHTML = e.education[key].school;
+            td3.innerHTML = e.education[key].startDate;
+            td4.innerHTML = e.education[key].passout;
+            td5.innerHTML = e.education[key].percentage;
+            td6.innerHTML = e.education[key].backlog;
 
             tr.appendChild(td1);
             tr.appendChild(td2);
@@ -320,8 +319,7 @@
             tr.appendChild(td5);
             tr.appendChild(td6);
             tr.setAttribute("id", "tableRow" + count);
-            const temp1 = JSON.stringify(obj);
-            console.log(temp1);
+
             td7.innerHTML = `
             <button class="edit-btn" onclick="edit(${count})">
                 Edit
@@ -334,13 +332,49 @@
             tr.appendChild(td7);
             table.appendChild(tr);
         }
+        // for (let obj of e.education) {
+        //     const tr = document.createElement("tr");
+        //     const td1 = document.createElement("td");
+        //     const td2 = document.createElement("td");
+        //     const td3 = document.createElement("td");
+        //     const td4 = document.createElement("td");
+        //     const td5 = document.createElement("td");
+        //     const td6 = document.createElement("td");
+        //     const td7 = document.createElement("td");
+
+        //     td1.innerHTML = obj.degree;
+        //     td2.innerHTML = obj.school;
+        //     td3.innerHTML = obj.startDate;
+        //     td4.innerHTML = obj.passout;
+        //     td5.innerHTML = obj.percentage;
+        //     td6.innerHTML = obj.backlog;
+
+        //     tr.appendChild(td1);
+        //     tr.appendChild(td2);
+        //     tr.appendChild(td3);
+        //     tr.appendChild(td4);
+        //     tr.appendChild(td5);
+        //     tr.appendChild(td6);
+        //     tr.setAttribute("id", "tableRow" + count);
+        //     const temp1 = JSON.stringify(obj);
+        //     console.log(temp1);
+        //     td7.innerHTML = `
+        //     <button class="edit-btn" onclick="edit(${count})">
+        //         Edit
+        //     </button>
+        //     <button class="delete-btn" onclick="deleteRow(${count})">
+        //         Delete
+        //     </button>
+        //     `;
+        //     count++;
+        //     tr.appendChild(td7);
+        //     table.appendChild(tr);
+        // }
     }
     function edit(row) {
         const elem = document.getElementById("tableRow" + row);
         const tds = elem.getElementsByTagName("td");
-        function save() {
-            console.log("save has been clicked");
-        }
+
         for (let i = 0; i < tds.length; i++) {
             let dataType = "text";
             if (i == 2 || i == 3) {
@@ -359,12 +393,12 @@
     function save(row) {
         const elem = document.getElementById("tableRow" + row);
         const tds = elem.getElementsByTagName("td");
-        const keys = ["degree","school","startDate","passout","percentage","backlog"];
+        const keys = ["degree", "school", "startDate", "passout", "percentage", "backlog"];
         console.log(data.education);
-        let count=0;
+        let count = 0;
         const temp = {};
-        for(let key in data.education[0]){
-            temp[keys[count]] = tds[count].querySelectorAll("input")[0].value;
+        for (let key of keys) {
+            temp[key] = tds[count].querySelectorAll("input")[0].value;
             tds[count].innerHTML = tds[count].querySelectorAll("input")[0].value;
             count++;
         }
@@ -374,13 +408,13 @@
                 Delete
             </button>
         `;
-        data.education[row] = temp; 
-        console.log("updated Form Data = " , data);
+        data.education["row" + row] = temp;
+        console.log("updated Form Data", data);
     }
-function deleteRow(row){
-    const tempRow = document.getElementById("tableRow"+row);
-    tempRow.remove();
-    delete data.education[row];
-    console.log(data);
-}
+    function deleteRow(row) {
+        const tempRow = document.getElementById("tableRow" + row);
+        tempRow.remove();
+        delete data.education["row" + row];
+        console.log("updated Form Data", data);
+    }
 </script>
