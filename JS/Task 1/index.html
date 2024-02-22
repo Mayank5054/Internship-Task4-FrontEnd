@@ -237,12 +237,14 @@
         container.appendChild(elem);
         console.log(elem);
     }
-
     function getData() {
         // console.log(document.forms);
         // var data = {
         //     education: []
         // };
+        data = {
+            education:[]
+        };
         data.firstName = document.forms[0]["fname"].value;
         data.lastName = document.forms[0]["lname"].value;
         data.dob = document.forms[0]["dob"].value;
@@ -276,7 +278,6 @@
         displayData(data);
         form.reset();
     }
-
     function displayData(e) {
         table.innerHTML = "";
         identity.innerHTML = "";
@@ -324,7 +325,11 @@
             td7.innerHTML = `
             <button class="edit-btn" onclick="edit(${count})">
                 Edit
-            </button>`;
+            </button>
+            <button class="delete-btn" onclick="deleteRow(${count})">
+                Delete
+            </button>
+            `;
             count++;
             tr.appendChild(td7);
             table.appendChild(tr);
@@ -345,7 +350,7 @@
                 dataType = "number";
             }
             else if (i == 6) {
-                tds[i].innerHTML = `<button onclick="save(${row})">save</button>`;
+                tds[i].innerHTML = `<button class="save-btn" onclick="save(${row})">save</button>`;
                 continue;
             }
             tds[i].innerHTML = `<input type=${dataType} value="${tds[i].innerText}"></input>`;
@@ -362,10 +367,20 @@
             temp[keys[count]] = tds[count].querySelectorAll("input")[0].value;
             tds[count].innerHTML = tds[count].querySelectorAll("input")[0].value;
             count++;
-         
         }
-        tds[count].innerHTML = `<button onclick="edit(${row})">Edit</button>`;
+        tds[count].innerHTML = `
+        <button class="edit-btn" onclick="edit(${row})">Edit</button>
+        <button class="delete-btn" onclick="deleteRow(${row})">
+                Delete
+            </button>
+        `;
         data.education[row] = temp; 
-        console.log(data);
+        console.log("updated Form Data = " , data);
     }
+function deleteRow(row){
+    const tempRow = document.getElementById("tableRow"+row);
+    tempRow.remove();
+    delete data.education[row];
+    console.log(data);
+}
 </script>
