@@ -63,7 +63,7 @@ form{
 }
 tr td{
     padding:10px;
-
+   
     margin-left:15px;
 }
 tr:nth-child(even){
@@ -97,4 +97,13 @@ input{
 }
 .submitButton:hover{
     scale:1.05;
+}
+.edit-btn,.delete-btn,.save-btn{
+    font-size:12px;
+    border-radius:5px !important;
+}
+button:hover{
+    scale:1.02;
+    background:black;
+    color:white;
 }
