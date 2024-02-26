@@ -1,14 +1,14 @@
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
-flex-direction:column ;
-background: #fafafa;
+    flex-direction: column;
+    background: #fafafa;
 }
 
-form{
-    min-height:30vh;
-    width:80%;
+form {
+    min-height: 30vh;
+    width: 80%;
     display: flex;
     align-items: center;
 
@@ -16,94 +16,161 @@ form{
     flex-direction: column;
     /* background:red; */
 }
-.form-upper{
+
+.form-upper {
     /* display:flex ; */
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.form-upper > div{
-    width:400px;
+
+.form-upper>div {
+    width: 400px;
     /* background:red; */
 }
-.input{
-    width:100%;
+
+.input {
+    width: 100%;
 }
-.form-lower{
-    width:100%;
+
+.form-lower {
+    width: 100%;
     /* display: flex;
     align-items:center ;
     justify-content: center;
     flex-direction: column; */
 }
-.education-title{
-    width:100%;
-    display:flex;
+
+.education-title {
+    width: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
-.education-title > button {
-    border-radius:100px;
-}
-.row1{
-    display: flex;
-    width:100%;
-    align-items:flex-start;
-    justify-content:flex-start;
-}
 
-.delte-btn > button {
+.education-title>button {
     border-radius: 100px;
 }
-.row2-btn{
-    display: none;
+
+.row1 {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
-.row2-btn-active{
-    display: block;
+
+.delte-btn>button {
+    border-radius: 100px;
 }
-tr td{
-    padding:10px;
-   
-    margin-left:15px;
-}
-tr:nth-child(even){
-    background:#717171;
-}
-table{
-    width:80%;
-}
-input{
-    padding:5px;
-    border-radius:5px;
-}
-#delete-btn{
+
+.row2-btn {
     display: none;
 }
 
-.delete-btn-active{
+.row2-btn-active {
+    display: block;
+}
+
+tr td {
+    padding: 10px;
+
+    margin-left: 15px;
+}
+
+tr:nth-child(even) {
+    background: #717171;
+}
+
+table {
+    width: 80%;
+}
+
+input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#delete-btn {
+    display: none;
+}
+
+.delete-btn-active {
     display: block !important;
 }
-.add-btn:hover{
-    scale:1.05;
+
+.add-btn:hover {
+    scale: 1.05;
 }
-::placeholder{
-    font-sizE:14px;
+
+::placeholder {
+    font-sizE: 14px;
 }
-.submitButton{
-    padding-left:20px !important;
-    padding-right:20px !important;
+
+.submitButton {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
     border-radius: 10px;
     border: none;
 }
-.submitButton:hover{
-    scale:1.05;
+
+.submitButton:hover {
+    scale: 1.05;
 }
-.edit-btn,.delete-btn,.save-btn{
-    font-size:12px;
-    border-radius:5px !important;
+
+.edit-btn,
+.delete-btn,
+.save-btn {
+    font-size: 12px;
+    border-radius: 5px !important;
 }
-button:hover{
-    scale:1.02;
+
+button:hover {
+    scale: 1.02;
+    background: black;
+    color: white;
+}
+
+.red_error {
+    color: red;
+}
+
+.green_success {
+    color: greenyellow;
+}
+
+input:focus {
+    border: 2px solid red;
+}
+
+.addDataBtn {
+
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 10px;
+    border: none;
+    BACKGROUND: rgb(231, 226, 226);
+}
+
+.modal-dialog {
+    max-width: 80%;
+    min-height: 70vh;
+}
+
+.title_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background:red; */
+    width:85%;
+
+}
+.title_div > p {
+    font-size:30px;
+}
+.dn{
+    display: none !important;
+}
+.addDataBtn:hover{
     background:black;
     color:white;
 }
